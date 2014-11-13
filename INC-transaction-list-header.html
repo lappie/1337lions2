@@ -1,0 +1,37 @@
+<div id="account-data">
+			<div id="account-data-name">Hr A. van Dijk</div>
+			<div id="account-data-account">NL29 INGB 0384 2067 98</div>
+			<div id="account-data-total">&euro; 212.<span class="decimals">03</span></div>
+			<div id="account-data-total-extrapolated">Spendable in November: &euro;168.<span class="decimals-small">23</span></div>
+		</div>
+
+
+		<div data-role="navbar">
+			<ul>
+				<a href="transaction-list.php" data-transition="slide" class="ui-btn-active">In</a>
+				<a href="transaction-list-out.php" data-transition="slide">Out</a>
+				<a href="transaction-list-invites.php" data-transition="slide" id="invite-bar-my">Invites</a>	
+			</ul>
+		</div>
+<br /><br />
+		<script>
+
+		var intervalId = 0;
+			function checkInvites(){
+				$.ajax({
+				type: 'HEAD',
+				url: 'data/<?php include("INC-settings.php"); global $transId; echo $transId;?>.trans',
+					success: function() {
+							//alert("transaction found!");
+							$('#invite-bar-my').append("*");
+							clearInterval(intervalId);
+					},
+					error: function() {
+							// page does not exist
+					}
+					});
+				}
+				
+			intervalId = setInterval(checkInvites, (1 * 1000))
+			
+		</script>
