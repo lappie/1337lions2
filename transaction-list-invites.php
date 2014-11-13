@@ -25,7 +25,7 @@
 		<!-------------- PAGE CONTENT ----------->
 			
 		<?php 
-			require("INC-transaction-list-header.html");
+			require("INC-transaction-list-header-invites.html");
 		?>
 		
 <ul class="transactions-invites-list" data-role="listview" id="transaction-list">
@@ -66,6 +66,7 @@
 		</a>
 	</li>
 </ul>
+<span id="this-is-page-invites"></span>
 <!--------------- /PAGE CONTENT ------------>
 </div><!-- ui-container -->
 		</div><!-- content -->

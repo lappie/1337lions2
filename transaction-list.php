@@ -16,7 +16,7 @@
 		<!-------------- PAGE CONTENT ----------->
 			
 		<?php 
-			require("INC-transaction-list-header.html");
+			require("INC-transaction-list-header-in.html");
 		?>
 		
 	<ul data-role="listview" id="transaction-list">
@@ -42,6 +42,7 @@
 			<h2>&euro;6.<span class="decimals">75</span></h2>
 		</li>
 	</ul>
+	<span id="this-is-page-in"></span>
 <!--------------- /PAGE CONTENT ------------>
 </div><!-- ui-container -->
 		</div><!-- content -->

@@ -17,7 +17,7 @@
 		<!-------------- PAGE CONTENT ----------->
 			
 		<?php 
-			require("INC-transaction-list-header.html");
+			require("INC-transaction-list-header-out.html");
 		?>
 		
 <ul data-role="listview" id="transaction-list">
@@ -34,7 +34,7 @@
 		<img src="img/qr-button.png" />
 		<h3>Starbucks</h3>
 		<p><u class="span-underline">London, United Kingdom</u></p>
-		<h2>-£2.<span class="decimals">24</span></h2>
+		<h2>-&pound;2.<span class="decimals">24</span></h2>
 		<h4>&euro;2,53.<span class="decimals">68</span></h4>
 	</li>
 	<li data-role="list-divider">
@@ -55,6 +55,7 @@
 		<h2>-&euro;6.<span class="decimals">35</span></h2>
 	</li>
 </ul>
+<span id="this-is-page-out"></span>
 <!--------------- /PAGE CONTENT ------------>
 </div><!-- ui-container -->
 		</div><!-- content -->
