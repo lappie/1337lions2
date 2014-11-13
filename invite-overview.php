@@ -3,6 +3,15 @@
 	require("INC-header.html");
 ?>
 
+<?php
+	//if an ID is given, create the transaction
+	if(isset($_GET['id'])) {
+		$id = $_GET['id']; 
+		
+		file_put_contents("data/$id.trans", "$id");
+	}
+?>
+
 	<div data-role="page" >
 	
 		<?php 

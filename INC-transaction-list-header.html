@@ -10,7 +10,28 @@
 			<ul>
 				<a href="transaction-list.php" data-transition="slide" class="ui-btn-active">In</a>
 				<a href="transaction-list-out.php" data-transition="slide">Out</a>
-				<a href="transaction-list-invites.php" data-transition="slide">Invites</a>	
+				<a href="transaction-list-invites.php" data-transition="slide" id="invite-bar-my">Invites</a>	
 			</ul>
 		</div>
 <br /><br />
+		<script>
+
+		var intervalId = 0;
+			function checkInvites(){
+				$.ajax({
+				type: 'HEAD',
+				url: 'data/<?php include("INC-settings.php"); global $transId; echo $transId;?>.trans',
+					success: function() {
+							//alert("transaction found!");
+							$('#invite-bar-my').html("Invites*");
+							clearInterval(intervalId);
+					},
+					error: function() {
+							// page does not exist
+					}
+					});
+				}
+				
+			intervalId = setInterval(checkInvites, (1 * 1000))
+			
+		</script>
